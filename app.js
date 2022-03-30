@@ -1,5 +1,5 @@
 const Header = () => {
-    return  (
+    return (
         <header>
             <h1>Scoreboard</h1>
             <span className="stats">Players: 1</span>
@@ -13,26 +13,33 @@ const Player = () => {
             <span className="player-name">
                 Joe
             </span>
-            <div className="counter">
-                <button className="counter-action decrement"> - </button>
-                <span className="counter-score"> 35 </span>
-                <button className="counter-action increment"> + </button>
-            </div>
+            <Counter />
         </div>
     )
 }
 
 const Counter = () => {
-    return(
+    return (
         <div className="counter">
-        <button className="counter-action decrement"> - </button>
-        <span className="counter-score"> 35 </span>
-        <button className="counter-action increment"> + </button>
-    </div>
+            <button className="counter-action decrement"> - </button>
+            <span className="counter-score"> 35 </span>
+            <button className="counter-action increment"> + </button>
+        </div>
+    );
+}
+
+const App = () => {
+    return (
+        <div className="scoreboard">
+            <Header />
+
+            {/* Start of players list */}
+            <Player />
+        </div>
     )
 }
 
 ReactDOM.render(
-    <Counter />,
+    <App />,
     document.getElementById('root')
 );
