@@ -1,19 +1,38 @@
-const desc = 'I just learned how to create a React node and render it into the DOM.'
-const myTitleID = 'main-title';
-const person = 'Joe';
+const Header = () => {
+    return  (
+        <header>
+            <h1>Scoreboard</h1>
+            <span className="stats">Players: 1</span>
+        </header>
+    );
+}
 
+const Player = () => {
+    return (
+        <div className="player">
+            <span className="player-name">
+                Joe
+            </span>
+            <div className="counter">
+                <button className="counter-action decrement"> - </button>
+                <span className="counter-score"> 35 </span>
+                <button className="counter-action increment"> + </button>
+            </div>
+        </div>
+    )
+}
 
-
-
-const header = (
-    <header>
-    {/* Comments need to be used inside of curly braces */}
-        <h1 id={myTitleID}>  { person }'s First React Element</h1>
-        <p className="main-desc">{ desc }</p>
-    </header>
-);
+const Counter = () => {
+    return(
+        <div className="counter">
+        <button className="counter-action decrement"> - </button>
+        <span className="counter-score"> 35 </span>
+        <button className="counter-action increment"> + </button>
+    </div>
+    )
+}
 
 ReactDOM.render(
-    header,
+    <Counter />,
     document.getElementById('root')
 );
